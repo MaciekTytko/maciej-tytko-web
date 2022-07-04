@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <H1>Maciej Tytko</H1>
-        <H2>official site</H2>
+        <h1>Maciej Tytko</h1>
+        <h2>official site</h2>
       </header>
     </div>
   );
