@@ -1,0 +1,8 @@
+@import '../../SASS/basicComponents';
+@import '../../SASS/colors';
+
+.master{
+  @include flexCenter(column);
+  background-color: $MainBackGroundColor;
+  color: whitesmoke;
+}

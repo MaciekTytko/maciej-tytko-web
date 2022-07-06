@@ -1,12 +1,14 @@
-import './App.css';
+import './App.scss';
+import Body from './Containers/Body/Body';
+import Footer from './Containers/Footer/Footer';
+import Menu from './Containers/Menu.js/Menu';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Maciej Tytko</h1>
-        <h2>official site</h2>
-      </header>
+      <Menu/>
+      <Body/>
+      <Footer/>
     </div>
   );
 }

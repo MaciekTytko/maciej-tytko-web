@@ -1,0 +1,8 @@
+@import '../../SASS/basicComponents';
+@import '../../SASS/colors';
+
+.footer{
+  @include flexCenter(column);
+  background-color: $FooterBackGroundColor;
+  color: rgb(228, 228, 228);
+}
