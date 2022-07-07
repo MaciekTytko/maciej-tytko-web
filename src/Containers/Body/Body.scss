@@ -1,15 +1,55 @@
 @import '../../SASS/basicComponents';
 @import '../../SASS/colors';
 
-.main{
-  @include flexCenter(row);
-  .div1{
+
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  .div1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: $ColorBasicLight;
+
     background-color: $ColorBasicDark;
+    flex: 1;
+    padding: 2rem;
+
+    .header {
+      .logo {}
+    }
   }
-  .div2{
+
+  .div2 {
     background-color: $ColorBasicMain;
+    padding: 2rem;
+    flex: 1;
+    color: $ColorBasicSecondary;
+
+    &:hover {
+      background-color: $ColorBasicSecondary;
+      color: $ColorBasicLight;
+      transition: background-color 1s;
+      transition: color 2s;
+    }
   }
-  .div3{
+
+  .div3 {
     background-color: $ColorBasicLight;
+    padding: 2rem;
+    flex: 1;
+
+    &:hover {
+      background-color: $ColorBasicSecondary;
+      transition: background-color 1s;
+    }
   }
 }
