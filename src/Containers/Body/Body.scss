@@ -1,0 +1,15 @@
+@import '../../SASS/basicComponents';
+@import '../../SASS/colors';
+
+.main{
+  @include flexCenter(row);
+  .div1{
+    background-color: $ColorBasicDark;
+  }
+  .div2{
+    background-color: $ColorBasicMain;
+  }
+  .div3{
+    background-color: $ColorBasicLight;
+  }
+}
