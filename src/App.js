@@ -1,13 +1,14 @@
 import './App.scss';
-import Body from './Containers/Body/Body';
 import Footer from './Containers/Footer/Footer';
-import Menu from './Containers/Menu.js/Menu';
+import Menu from './Containers/Menu/Menu';
+import Header from './Containers/Header/Header';
+
 
 function App() {
   return (
     <div className="App">
       <Menu/>
-      <Body/>
+      <Header/>
       <Footer/>
     </div>
   );

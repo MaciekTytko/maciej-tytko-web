@@ -1,0 +1,25 @@
+@import '../../SASS/basicComponents';
+@import '../../SASS/colors';
+
+.header{
+  @include flexCenter(column);
+  background-color: $ColorBasicDark;
+  color: whitesmoke;
+  .container{
+    @include flexCenter(row);
+  }
+  .left{
+    margin: 4rem;
+    margin-right: 10vw;
+    text-align: left;
+  }
+  .right{
+    padding: 2rem;
+  }
+  .image{
+    max-width: 60vw;
+    max-height: 60vh;
+  }
+
+}
+

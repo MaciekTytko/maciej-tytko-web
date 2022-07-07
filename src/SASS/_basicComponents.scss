@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
+  @media (max-width: 600px) { 
+    flex-direction: column-reverse;
+  }
 }
-
 
 .someClassExample{
   @include flexCenter(column);

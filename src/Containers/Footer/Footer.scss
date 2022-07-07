@@ -3,6 +3,6 @@
 
 .footer{
   @include flexCenter(column);
-  background-color: $FooterBackGroundColor;
+  background-color: $ColorBasicMain;
   color: rgb(228, 228, 228);
 }
