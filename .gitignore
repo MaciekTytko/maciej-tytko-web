@@ -31,3 +31,6 @@ firebase
 ./.firebaserc
 .firebaserc
 *.firebaserc
+
+#assets
+/src/assets

@@ -1,0 +1,41 @@
+@import "../../../SASS/basicComponents";
+@import "../../../SASS/colors";
+
+.buttonPuzzle{
+  margin: 3px;
+  border: 8px solid #fff;
+  border-radius: 15px;
+
+  width: 75%;
+  height: auto;
+  aspect-ratio: 4/3;
+
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inside{
+    border: 4px solid #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: #fff;
+    background-color: $ColorBasicSecondary;
+  }
+  &:hover{
+    background: url("../../../assets/images/Temp.png");
+    background-size: cover;
+    background-position: center;
+    
+    transform: background 1s linear;
+
+  }
+}

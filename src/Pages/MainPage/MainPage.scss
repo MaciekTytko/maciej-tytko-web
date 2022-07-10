@@ -1,0 +1,103 @@
+@import '../../SASS/basicComponents';
+@import '../../SASS/colors';
+
+.mainPage {
+  flex: 8;
+  display: flex;
+  flex-direction: row;
+
+  .halfView {
+    flex: 1;
+    display: flex;
+  
+  }
+  
+  @mixin mainPageDiv(){
+    width: 100%;
+    padding: 2rem;
+    &:hover {
+      padding-top: 20%;
+      transition:
+        background-color 0.5s linear,
+        color 0.5s linear,
+        padding-top 0.5s ease,
+        background-position 0.5s ease,
+        ;
+      ;
+    }
+  }
+  
+  .aboutMe {
+    @include mainPageDiv();
+    background-color: $ColorBasicMain;
+    color: $ColorBasicSecondary;
+    &:hover {
+      background-color: $ColorBasicSecondary;
+      color: $ColorBasicLight;;
+    }
+  }
+  
+  .aboutMe:hover .listElement{
+    opacity: 1;
+    transition: opacity 0.3s linear 0.45s;
+  }
+  
+  .listElement{
+    opacity: 0;
+    font-size: 2rem;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    &:hover{
+      color: $ColorBasicMain;
+    }
+  }
+  
+  .title{
+    font-size: 6rem;
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
+  
+  .subtitle{
+    font-size: 1.5rem;
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
+  
+  
+  .puzzle {
+    @include mainPageDiv();
+    background-color: $ColorBasicLight;
+    color: $ColorBasicSecondary;
+    &:hover {
+      background-color: $ColorBasicSecondary;
+      color: $ColorBasicLight;
+      background-position: right top -5%;
+    }
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    background-image: url("../../assets/images/Background2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top -20%;
+  }
+  
+  .puzzle:hover .puzzleBox{
+    opacity: 1;
+    transition: opacity 0.3s linear 0.45s;
+  }
+  
+  .puzzleBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+  
+  
+}
+

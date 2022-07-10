@@ -1,27 +1,86 @@
 @import '../../SASS/basicComponents';
 @import '../../SASS/colors';
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: $ColorBasicDark;
-}
+.menuExpanded {
+  flex: 4; 
+  display: flex;
 
-li {
-  float: left;
-}
+  .menuMainPage {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  
+    color: $ColorBasicLight;
+  
+    background-color: $ColorBasicDark;
+    padding: 2rem;
+  }
+  
+  .title{
+    font-size: 4rem;
+  }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  background-color: $ColorBasicMain;
-}
+  .header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: none;
 
-li a:hover {
-  background-color: $ColorBasicSecondary;
+  }
+
+  .menu-button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+
+    &:hover{
+      rotate: -90deg;
+      transition: rotate 1s;
+    }
+
+    @mixin line(){
+      margin-top: 6px;
+      height: 6px;
+      background-color: white;
+    }
+
+    .line1{
+      @include line();
+      width: 20px;
+    }
+    &:hover .line1{
+      width: 40px;
+      transition: width 1s, margin-left 1s;
+    }
+
+    .line2{
+      @include line();
+      width: 40px;
+    }
+    &:hover .line2{
+      margin-left: 20px;
+      width: 20px;
+      transition: width 1s, margin-left 1s;
+    }
+    .line3{
+      @include line();
+      margin-left: 20px;
+      width: 20px;
+    }
+    &:hover .line3{
+      margin-left: 0px;
+      width: 40px;
+      transition: width 1s, margin-left 1s;
+    }
+  }
+
+
+
+
+
+
 }

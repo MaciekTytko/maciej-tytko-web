@@ -1,13 +1,9 @@
-@mixin flexCenter($direction: column){
+@mixin flexCenter($direction: column, $JustifyContent: center){
   display:flex;
-  justify-content: center;
+  justify-content: $JustifyContent;
   align-items: center;
   flex-direction: $direction;
   @media (max-width: 600px) { 
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
-}
-
-.someClassExample{
-  @include flexCenter(column);
 }
