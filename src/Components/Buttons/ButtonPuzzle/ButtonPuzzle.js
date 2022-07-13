@@ -3,7 +3,7 @@ import Badge from '@mui/material/Badge';
 
 export default function ButtonPuzzle() {
 
-  const clickHandler = ()=>{
+  const clickHandler = () => {
     console.log('lol');
   }
 
@@ -16,6 +16,12 @@ export default function ButtonPuzzle() {
           vertical: 'top',
           horizontal: 'left',
         }}
+        sx={{ width: '100%', 
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
       >
         <div className='inside'>
           <p>Super Nowy</p>

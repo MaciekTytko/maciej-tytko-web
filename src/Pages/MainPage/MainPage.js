@@ -1,5 +1,7 @@
 import ButtonPuzzle from '../../Components/Buttons/ButtonPuzzle/ButtonPuzzle';
 import './MainPage.scss'
+import Typewriter from 'typewriter-effect';
+import { useState } from 'react';
 
 export default function MainPage() {
   return (
@@ -11,13 +13,29 @@ export default function MainPage() {
 }
 
 function AboutMe() {
+  
+
   return (
     <div className='aboutMe'>
       <div>
         <h2 className='title'>O mnie</h2>
+        {/* <Typewriter
+          onInit={(typewriter) => {
+            typewriter.typeString('Hello World!')
+              .callFunction(() => {
+                console.log('String typed out!');
+              })
+              .pauseFor(2500)
+              .deleteAll()
+              .callFunction(() => {
+                console.log('All strings were deleted');
+              })
+              .start();
+          }}
+        /> */}
         <p className='subtitle'>Poznajmy się</p>
       </div>
-      <div style={{marginTop: "2rem"}}>
+      <div>
         <p className='listElement'>Życiorys</p>
         <p className='listElement'>Moje prace</p>
         <p className='listElement'>Publikacje</p>

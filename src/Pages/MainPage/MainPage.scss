@@ -6,17 +6,19 @@
   display: flex;
   flex-direction: row;
 
+  @media (max-width: 600px) { 
+    flex-direction: column;
+  }
   .halfView {
     flex: 1;
     display: flex;
-  
+    min-height: 1vh;
   }
   
   @mixin mainPageDiv(){
     width: 100%;
     padding: 2rem;
     &:hover {
-      padding-top: 20%;
       transition:
         background-color 0.5s linear,
         color 0.5s linear,
@@ -34,6 +36,15 @@
     &:hover {
       background-color: $ColorBasicSecondary;
       color: $ColorBasicLight;;
+    }
+
+    
+    background-image: url("../../assets/images/Background3a.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @media (max-width: 600px) { 
+      background-image: url("../../assets/images/Background3b.png");
     }
   }
   
@@ -73,6 +84,7 @@
       background-color: $ColorBasicSecondary;
       color: $ColorBasicLight;
       background-position: right top -5%;
+      padding-top: 20%;
     }
   
     display: flex;
