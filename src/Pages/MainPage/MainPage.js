@@ -12,36 +12,71 @@ export default function MainPage() {
   );
 }
 
-function AboutMe() {
-  
 
+function AboutMe() {
+  const [hover, setHover] = useState(false);
+  const [listShowButton, setListShowButton] = useState({ 0: null, 1: null, 2: null, 3: null })
+  const listelements = ["Życiorys", "Moje prace", "Publikacje", "Kontakt"]
+  const typeWriterDelay = 40;
+
+  const showList = () => {
+    let time = 400;
+    setListShowButton({ 0: null, 1: null, 2: null, 3: null });
+    setTimeout(() => {
+      setListShowButton({ 0: "Writer", 1: null, 2: null, 3: null });
+    }, time)
+    setTimeout(() => {
+      setListShowButton({ 0: "Button", 1: "Writer", 2: null, 3: null });
+    }, time += listelements[0].length * typeWriterDelay + 600)
+    setTimeout(() => {
+      setListShowButton({ 0: "Button", 1: "Button", 2: "Writer", 3: null });
+    }, time += listelements[1].length * typeWriterDelay + 600)
+    setTimeout(() => {
+      setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Writer" });
+    }, time += listelements[2].length * typeWriterDelay + 600)
+    setTimeout(() => {
+      setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Button" });
+    }, time += listelements[3].length * typeWriterDelay + 600)
+  }
+  const hideList = () => {
+    setListShowButton({ 0: null, 1: null, 2: null, 3: null });
+  }
   return (
-    <div className='aboutMe'>
+    <div
+      className='aboutMe'
+      onMouseEnter={() => { setHover(true); showList() }}
+      onMouseLeave={() => { setHover(false); hideList() }}
+    >
       <div>
         <h2 className='title'>O mnie</h2>
-        {/* <Typewriter
-          onInit={(typewriter) => {
-            typewriter.typeString('Hello World!')
-              .callFunction(() => {
-                console.log('String typed out!');
-              })
-              .pauseFor(2500)
-              .deleteAll()
-              .callFunction(() => {
-                console.log('All strings were deleted');
-              })
-              .start();
-          }}
-        /> */}
-        <p className='subtitle'>Poznajmy się</p>
+        {hover ? null : <p className='subtitle'>Poznajmy się</p>}
       </div>
-      <div>
-        <p className='listElement'>Życiorys</p>
-        <p className='listElement'>Moje prace</p>
-        <p className='listElement'>Publikacje</p>
-        <p className='listElement'>Kontakt</p>
+      <div className='listElement'>
+        {hover
+          ? <>
+            {listShowButton[0] === "Writer" ? <TypeWriterCustom text={listelements[0]} delay={typeWriterDelay} /> : listShowButton[0] === "Button" ? <div>{listelements[0]}</div> : null}
+            {listShowButton[1] === "Writer" ? <TypeWriterCustom text={listelements[1]} delay={typeWriterDelay} /> : listShowButton[1] === "Button" ? <div>{listelements[1]}</div> : null}
+            {listShowButton[2] === "Writer" ? <TypeWriterCustom text={listelements[2]} delay={typeWriterDelay} /> : listShowButton[2] === "Button" ? <div>{listelements[2]}</div> : null}
+            {listShowButton[3] === "Writer" ? <TypeWriterCustom text={listelements[3]} delay={typeWriterDelay} /> : listShowButton[3] === "Button" ? <div>{listelements[3]}</div> : null}
+          </>
+          : null
+        }
       </div>
     </div>
+  )
+}
+
+function TypeWriterCustom(props) {
+  return (
+    <Typewriter
+      options={{
+        delay: props.delay
+      }}
+      onInit={(typewriter) => {
+        typewriter
+          .typeString(props.text)
+          .start();
+      }} />
   )
 }
 

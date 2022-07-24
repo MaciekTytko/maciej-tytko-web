@@ -20,9 +20,9 @@ function Profile(){
       </div>
       <div>
         <span>Inżynier [LinkedIn]</span>
-        <span>Inżynier [Blog]</span>
-        <span>Inżynier [Facebook]</span>
-        <span>Inżynier [CV]</span>
+        <span>Designer [Blog]</span>
+        <span>Fantasta [Facebook]</span>
+        <span>Pracownik [CV]</span>
       </div>
 
     </div>
