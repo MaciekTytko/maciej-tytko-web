@@ -5,19 +5,27 @@
   flex: 8;
   display: flex;
   flex-direction: row;
-
   @media (max-width: 600px) { 
-    flex-direction: column;
+    display: inline;
   }
+
   .halfView {
     flex: 1;
-    display: flex;
-    min-height: 1vh;
+    //overflow-y: hidden;
+    @media (max-width: 600px) { 
+      display: inline;
+    }
+
   }
   
   @mixin mainPageDiv(){
-    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
     padding: 2rem;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    
     &:hover {
       transition:
         background-color 0.5s linear,

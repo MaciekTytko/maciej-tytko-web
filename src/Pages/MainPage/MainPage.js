@@ -13,6 +13,7 @@ export default function MainPage() {
 }
 
 
+let hoverCounter = 0;
 function AboutMe() {
   const [hover, setHover] = useState(false);
   const [listShowButton, setListShowButton] = useState({ 0: null, 1: null, 2: null, 3: null })
@@ -20,22 +21,25 @@ function AboutMe() {
   const typeWriterDelay = 40;
 
   const showList = () => {
+    hoverCounter = hoverCounter+1;
+    const hoverMutex = hoverCounter;
+    console.log(hoverCounter)
     let time = 400;
     setListShowButton({ 0: null, 1: null, 2: null, 3: null });
     setTimeout(() => {
-      setListShowButton({ 0: "Writer", 1: null, 2: null, 3: null });
+      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Writer", 1: null, 2: null, 3: null });
     }, time)
     setTimeout(() => {
-      setListShowButton({ 0: "Button", 1: "Writer", 2: null, 3: null });
+      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Writer", 2: null, 3: null });
     }, time += listelements[0].length * typeWriterDelay + 600)
     setTimeout(() => {
-      setListShowButton({ 0: "Button", 1: "Button", 2: "Writer", 3: null });
+      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Button", 2: "Writer", 3: null });
     }, time += listelements[1].length * typeWriterDelay + 600)
     setTimeout(() => {
-      setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Writer" });
+      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Writer" });
     }, time += listelements[2].length * typeWriterDelay + 600)
     setTimeout(() => {
-      setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Button" });
+      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Button" });
     }, time += listelements[3].length * typeWriterDelay + 600)
   }
   const hideList = () => {
