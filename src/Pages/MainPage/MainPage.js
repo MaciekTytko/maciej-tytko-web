@@ -13,43 +13,37 @@ export default function MainPage() {
 }
 
 
-let hoverCounter = 0;
+
 function AboutMe() {
   const [hover, setHover] = useState(false);
-  const [listShowButton, setListShowButton] = useState({ 0: null, 1: null, 2: null, 3: null })
+  const [listShowButton, setListShowButton] = useState(0)
+  const [hoverMutex, setHoverMutex] = useState(0)
   const listelements = ["Życiorys", "Moje prace", "Publikacje", "Kontakt"]
   const typeWriterDelay = 40;
 
   const showList = () => {
-    hoverCounter = hoverCounter+1;
-    const hoverMutex = hoverCounter;
-    console.log(hoverCounter)
+    if (hoverMutex) { console.log('return on hoveMutex'); return };
+    setHoverMutex(true);
+    console.log('hoveMutex true')
     let time = 400;
-    setListShowButton({ 0: null, 1: null, 2: null, 3: null });
+    setListShowButton(0);
     setTimeout(() => {
-      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Writer", 1: null, 2: null, 3: null });
+      setListShowButton(1);
     }, time)
+    listelements.map((x, i) => {
+      setTimeout(() => {
+        setListShowButton(1+2*(i+1));
+      }, time += x.length * typeWriterDelay + 200)
+    })
     setTimeout(() => {
-      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Writer", 2: null, 3: null });
-    }, time += listelements[0].length * typeWriterDelay + 600)
-    setTimeout(() => {
-      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Button", 2: "Writer", 3: null });
-    }, time += listelements[1].length * typeWriterDelay + 600)
-    setTimeout(() => {
-      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Writer" });
-    }, time += listelements[2].length * typeWriterDelay + 600)
-    setTimeout(() => {
-      if(hoverMutex===hoverCounter) setListShowButton({ 0: "Button", 1: "Button", 2: "Button", 3: "Button" });
-    }, time += listelements[3].length * typeWriterDelay + 600)
-  }
-  const hideList = () => {
-    setListShowButton({ 0: null, 1: null, 2: null, 3: null });
+      setHoverMutex(false);
+    }, time)
+
   }
   return (
     <div
       className='aboutMe'
       onMouseEnter={() => { setHover(true); showList() }}
-      onMouseLeave={() => { setHover(false); hideList() }}
     >
       <div>
         <h2 className='title'>O mnie</h2>
@@ -58,10 +52,10 @@ function AboutMe() {
       <div className='listElement'>
         {hover
           ? <>
-            {listShowButton[0] === "Writer" ? <TypeWriterCustom text={listelements[0]} delay={typeWriterDelay} /> : listShowButton[0] === "Button" ? <div>{listelements[0]}</div> : null}
-            {listShowButton[1] === "Writer" ? <TypeWriterCustom text={listelements[1]} delay={typeWriterDelay} /> : listShowButton[1] === "Button" ? <div>{listelements[1]}</div> : null}
-            {listShowButton[2] === "Writer" ? <TypeWriterCustom text={listelements[2]} delay={typeWriterDelay} /> : listShowButton[2] === "Button" ? <div>{listelements[2]}</div> : null}
-            {listShowButton[3] === "Writer" ? <TypeWriterCustom text={listelements[3]} delay={typeWriterDelay} /> : listShowButton[3] === "Button" ? <div>{listelements[3]}</div> : null}
+            {listShowButton > 1 ? <div>{listelements[0]}</div> : listShowButton > 0 ? <TypeWriterCustom text={listelements[0]} delay={typeWriterDelay} /> : null}
+            {listShowButton > 3 ? <div>{listelements[1]}</div> : listShowButton > 2 ? <TypeWriterCustom text={listelements[1]} delay={typeWriterDelay} /> : null}
+            {listShowButton > 5 ? <div>{listelements[2]}</div> : listShowButton > 4 ? <TypeWriterCustom text={listelements[2]} delay={typeWriterDelay} /> : null}
+            {listShowButton > 7 ? <div>{listelements[3]}</div> : listShowButton > 6 ? <TypeWriterCustom text={listelements[3]} delay={typeWriterDelay} /> : null}
           </>
           : null
         }
