@@ -16,14 +16,27 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { purple , green} from '@mui/material/colors';
 
 export default function SiteMap() {
-  const [open, setOpen] = useState(false);
+  const [aboutMeOpen, setAboutMeOpen] = useState(true);
+  const [puzzleOpen, setPuzzleOpen] = useState(false);
 
-
+  const menuTheme = createTheme({
+    typography: {
+      fontSize: '5rem',
+    },
+    palette: {
+      text:{
+        primary: '#FF0000'
+      }
+    }
+  });
 
 
   return (
+    <ThemeProvider theme={menuTheme}>
     <div className='siteMap'>
       <Box minWidth={240}>
         <List
@@ -34,44 +47,74 @@ export default function SiteMap() {
             <ListSubheader
               component="div"
               id="nested-list-subheader"
-              sx={{ bgcolor: 'bisque' }}
+              sx={{ bgcolor: 'bisque', fontSize: '3rem', fontWeight: 'Bold', textAlign: 'center' }}
             >
               MENU
             </ListSubheader>
           }
         >
-          <ListItemButton>
+          <ListItemButton onClick={()=>setAboutMeOpen(!aboutMeOpen)}>
             <ListItemIcon>
               <AccountCircleIcon />
             </ListItemIcon>
             <ListItemText primary="O mnie" />
-            {open ? <ExpandLess /> : <ExpandMore />}
+            {aboutMeOpen ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={aboutMeOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItemButton sx={{ pl: 4 }}>
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>
-                <ListItemText primary="Starred" />
+                <ListItemText primary="Poznajmy się" />
+              </ListItemButton>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon>
+                  <StarBorder />
+                </ListItemIcon>
+                <ListItemText primary="Kontakt" />
+              </ListItemButton>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon>
+                  <StarBorder />
+                </ListItemIcon>
+                <ListItemText primary="Geografia" />
               </ListItemButton>
             </List>
           </Collapse>
 
-          <ListItemButton>
+          <ListItemButton onClick={()=>setPuzzleOpen(!puzzleOpen)}>
             <ListItemIcon>
               <SettingsSuggestIcon />
             </ListItemIcon>
             <ListItemText primary="Prace zebrane" />
-            {open ? <ExpandLess /> : <ExpandMore />}
+            {puzzleOpen ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={puzzleOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItemButton sx={{ pl: 4 }}>
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>
-                <ListItemText primary="Starred" />
+                <ListItemText primary="Fake hotel booking" />
+              </ListItemButton>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon>
+                  <StarBorder />
+                </ListItemIcon>
+                <ListItemText primary="Better instagram" />
+              </ListItemButton>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon>
+                  <StarBorder />
+                </ListItemIcon>
+                <ListItemText primary="Make Poem" />
+              </ListItemButton>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon>
+                  <StarBorder />
+                </ListItemIcon>
+                <ListItemText primary="Więcej ciekawych Prac" />
               </ListItemButton>
             </List>
           </Collapse>
@@ -107,5 +150,6 @@ export default function SiteMap() {
         </List>
       </Box>
     </div>
+      </ThemeProvider>
   );
 }

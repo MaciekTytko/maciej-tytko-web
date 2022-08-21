@@ -4,18 +4,17 @@
 
 
 .siteMap{
+  box-sizing: border-box;
   flex: 8; 
 
 
   box-sizing: border-box;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-left: 4rem;
 
-
+  
   height: 100%;
 
   background-color: bisque;
 
-  h1{
-    padding-left: 1rem;
-  }
 }
