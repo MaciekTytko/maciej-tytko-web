@@ -17,7 +17,8 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { purple , green} from '@mui/material/colors';
+import { purple, green, blue } from '@mui/material/colors';
+import { Button } from '@mui/material';
 
 export default function SiteMap() {
   const [aboutMeOpen, setAboutMeOpen] = useState(true);
@@ -25,131 +26,150 @@ export default function SiteMap() {
 
   const menuTheme = createTheme({
     typography: {
-      fontSize: '5rem',
+      fontSize: 18,
     },
     palette: {
-      text:{
-        primary: '#FF0000'
-      }
-    }
-  });
+      type: 'light',
+      primary: {
+        main: '#000000'
+      },
+      background: {
+        default: '#f4f4f9',
+        paper: '#00FF00',
+      },
+      text: {
+        primary: '#00FF00',
+        secondary: '#FFFF00',
+      },
+    },
 
+  });
+  const subpointSX = {
+    pl: 4,
+    "&:hover": { backgroundColor: "blue", color: "purple"}
+  }
 
   return (
     <ThemeProvider theme={menuTheme}>
-    <div className='siteMap'>
-      <Box minWidth={240}>
-        <List
-          sx={{ width: '100%', maxWidth: 400, bgcolor: 'bisque' }}
-          component="nav"
-          aria-labelledby="nested-list-subheader"
-          subheader={
-            <ListSubheader
-              component="div"
-              id="nested-list-subheader"
-              sx={{ bgcolor: 'bisque', fontSize: '3rem', fontWeight: 'Bold', textAlign: 'center' }}
-            >
-              MENU
-            </ListSubheader>
-          }
-        >
-          <ListItemButton onClick={()=>setAboutMeOpen(!aboutMeOpen)}>
-            <ListItemIcon>
-              <AccountCircleIcon />
-            </ListItemIcon>
-            <ListItemText primary="O mnie" />
-            {aboutMeOpen ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          <Collapse in={aboutMeOpen} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Poznajmy się" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Kontakt" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Geografia" />
-              </ListItemButton>
-            </List>
-          </Collapse>
+      <div className='siteMap'>
+        <Box minWidth={240}>
+          <List
+            sx={{ width: '100%', maxWidth: 400 }}
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader
+                component="div"
+                id="nested-list-subheader"
+                sx={{ fontSize: 48, fontWeight: 'Bold', textAlign: 'center' }}
+              >
+                MENU
+              </ListSubheader>
+            }
+          >
+            <ListItemButton onClick={() => setAboutMeOpen(!aboutMeOpen)}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="O mnie" />
+              {aboutMeOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={aboutMeOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Poznajmy się" />
+                </ListItemButton>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Kontakt" />
+                </ListItemButton>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Geografia" />
+                </ListItemButton>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <PictureAsPdfIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Podgląd mojego CV" />
+                </ListItemButton>
+              </List>
+            </Collapse>
 
-          <ListItemButton onClick={()=>setPuzzleOpen(!puzzleOpen)}>
-            <ListItemIcon>
-              <SettingsSuggestIcon />
-            </ListItemIcon>
-            <ListItemText primary="Prace zebrane" />
-            {puzzleOpen ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          <Collapse in={puzzleOpen} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Fake hotel booking" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Better instagram" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Make Poem" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Więcej ciekawych Prac" />
-              </ListItemButton>
-            </List>
-          </Collapse>
+            <ListItemButton onClick={() => setPuzzleOpen(!puzzleOpen)}>
+              <ListItemIcon>
+                <SettingsSuggestIcon />
+              </ListItemIcon>
+              <ListItemText primary="Prace zebrane" />
+              {puzzleOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={puzzleOpen} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Fake hotel booking" />
+                </ListItemButton>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Better instagram" />
+                </ListItemButton>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Make Poem" />
+                </ListItemButton>
+                <ListItemButton sx={subpointSX}>
+                  <ListItemIcon>
+                    <StarBorder />
+                  </ListItemIcon>
+                  <ListItemText primary="Więcej ciekawych Prac" />
+                </ListItemButton>
+              </List>
+            </Collapse>
 
-          <ListItemButton>
-            <ListItemIcon>
-              <LinkedInIcon />
-            </ListItemIcon>
-            <ListItemText primary="LinkedIn (Publikacje nt. technologii)" />
-          </ListItemButton>
+            <ListItemButton>
+              <ListItemIcon>
+                <LinkedInIcon />
+              </ListItemIcon>
+              <ListItemText primary="LinkedIn (Publikacje nt. technologii)" />
+            </ListItemButton>
 
-          <ListItemButton>
-            <ListItemIcon>
-              <YouTubeIcon />
-            </ListItemIcon>
-            <ListItemText primary="YouTube (Kurs online Asix SCADA)" />
-          </ListItemButton>
+            <ListItemButton>
+              <ListItemIcon>
+                <YouTubeIcon />
+              </ListItemIcon>
+              <ListItemText primary="YouTube (Kurs online Asix SCADA)" />
+            </ListItemButton>
 
-          <ListItemButton>
-            <ListItemIcon>
-              <FacebookIcon />
-            </ListItemIcon>
-            <ListItemText primary="Gliwickie Spotkania RPG" />
-          </ListItemButton>
+            <ListItemButton>
+              <ListItemIcon>
+                <FacebookIcon />
+              </ListItemIcon>
+              <ListItemText primary="Gliwickie Spotkania RPG" />
+            </ListItemButton>
 
-          <ListItemButton>
-            <ListItemIcon>
-              <PictureAsPdfIcon />
-            </ListItemIcon>
-            <ListItemText primary="Podgląd mojego CV" />
-          </ListItemButton>
 
-        </List>
-      </Box>
-    </div>
-      </ThemeProvider>
+          </List>
+        </Box>
+        <div className='IconCV'>
+          <Button variant="text" color="primary" sx={{ fontSize: 30 }}>
+            Pobierz CV
+            <PictureAsPdfIcon color="cv" sx={{ fontSize: 40, paddingLeft: '10px' }} />
+          </Button>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }

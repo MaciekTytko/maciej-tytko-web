@@ -7,14 +7,25 @@
   box-sizing: border-box;
   flex: 8; 
 
+  overflow-y: auto;
 
   box-sizing: border-box;
   padding-top: 2rem;
-  padding-left: 4rem;
-
+  padding-left: 2rem;
+  padding-right: 2rem;
   
   height: 100%;
+  width: 100%;
 
   background-color: bisque;
 
+}
+
+.IconCV{
+  position: fixed;
+  right: 10vh;
+  top: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
