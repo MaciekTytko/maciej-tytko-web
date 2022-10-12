@@ -18,7 +18,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { purple, green, blue } from '@mui/material/colors';
-import { Button } from '@mui/material';
+import { Button, ListItem } from '@mui/material';
 
 export default function SiteMap() {
   const [aboutMeOpen, setAboutMeOpen] = useState(true);
@@ -46,13 +46,13 @@ export default function SiteMap() {
   });
   const subpointSX = {
     pl: 4,
-    "&:hover": { backgroundColor: "blue", color: "purple"}
+    "&:hover": { color: "purple"}
   }
 
   return (
     <ThemeProvider theme={menuTheme}>
       <div className='siteMap'>
-        <Box minWidth={240}>
+        <Box minWidth={240} sx={{ bgcolor: 'background.paper' }} >
           <List
             sx={{ width: '100%', maxWidth: 400 }}
             component="nav"
@@ -169,6 +169,18 @@ export default function SiteMap() {
             <PictureAsPdfIcon color="cv" sx={{ fontSize: 40, paddingLeft: '10px' }} />
           </Button>
         </div>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText primary="Trash" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="#simple-list">
+              <ListItemText primary="Spam" />
+            </ListItemButton>
+          </ListItem>
+        </List>
       </div>
     </ThemeProvider>
   );
