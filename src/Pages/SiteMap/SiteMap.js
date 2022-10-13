@@ -2,7 +2,7 @@ import './SiteMap.scss';
 import Box from '@mui/material/Box';
 import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
+import MuiListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
@@ -17,8 +17,27 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { purple, green, blue } from '@mui/material/colors';
+import { purple, green, blue, red, pink, orange } from '@mui/material/colors';
 import { Button, ListItem } from '@mui/material';
+
+const StyledList = styled(List)({
+  // selected and (selected + hover) states
+  '&& .Mui-selected, && .Mui-selected:hover': {
+    backgroundColor: 'red',
+    '&, & .MuiListItemIcon-root': {
+      color: 'pink',
+    },
+  },
+  // hover states
+  '& .MuiListItemButton-root:hover': {
+    backgroundColor: 'orange',
+    '&, & .MuiListItemIcon-root': {
+      color: 'yellow',
+    },
+  },
+});
+
+
 
 export default function SiteMap() {
   const [aboutMeOpen, setAboutMeOpen] = useState(true);
@@ -35,11 +54,7 @@ export default function SiteMap() {
       },
       background: {
         default: '#f4f4f9',
-        paper: '#00FF00',
-      },
-      text: {
-        primary: '#00FF00',
-        secondary: '#FFFF00',
+        paper: '#FEFEFE',
       },
     },
 
@@ -49,9 +64,26 @@ export default function SiteMap() {
     "&:hover": { color: "purple"}
   }
 
+  const ListItemButton = styled(MuiListItemButton)({
+    // selected and (selected + hover) states
+    '&& .Mui-selected, && .Mui-selected:hover': {
+      backgroundColor: 'red',
+      '&, & .MuiListItemIcon-root': {
+        color: 'pink',
+      },
+    },
+    // hover states
+    '& .MuiListItemButton-root:hover': {
+      backgroundColor: 'orange',
+      '&, & .MuiListItemIcon-root': {
+        color: 'yellow',
+      },
+    },
+  });
+
   return (
-    <ThemeProvider theme={menuTheme}>
       <div className='siteMap'>
+      <ThemeProvider theme={menuTheme}>
         <Box minWidth={240} sx={{ bgcolor: 'background.paper' }} >
           <List
             sx={{ width: '100%', maxWidth: 400 }}
@@ -163,25 +195,70 @@ export default function SiteMap() {
 
           </List>
         </Box>
+    </ThemeProvider>
         <div className='IconCV'>
-          <Button variant="text" color="primary" sx={{ fontSize: 30 }}>
+          <Button variant="text" sx={{ color: '#0F0F0F', fontSize: 30 }}>
             Pobierz CV
             <PictureAsPdfIcon color="cv" sx={{ fontSize: 40, paddingLeft: '10px' }} />
           </Button>
         </div>
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
-            </ListItemButton>
-          </ListItem>
-        </List>
+
+
+
+        <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <StyledList
+      // sx={{
+      //   // selected and (selected + hover) states
+      //   '&& .Mui-selected, && .Mui-selected:hover': {
+      //     bgcolor: 'red',
+      //     '&, & .MuiListItemIcon-root': {
+      //       color: 'pink',
+      //     },
+      //   },
+      //   // hover states
+      //   '& .MuiListItemButton-root:hover': {
+      //     bgcolor: 'orange',
+      //     '&, & .MuiListItemIcon-root': {
+      //       color: 'yellow',
+      //     },
+      //   },
+      // }}
+      >
+        <ListItemButton
+          selected={selectedIndex === 0}
+          onClick={() => handleListItemClick(0)}
+        >
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <ListItemText primary="Inbox" />
+        </ListItemButton>
+        <ListItemButton
+          selected={selectedIndex === 1}
+          onClick={() => handleListItemClick(1)}
+        >
+          <ListItemIcon>
+            <DraftsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Drafts" />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton
+          selected={selectedIndex === 2}
+          onClick={() => handleListItemClick(2)}
+        >
+          <ListItemText primary="Trash" />
+        </ListItemButton>
+        <ListItemButton
+          selected={selectedIndex === 3}
+          onClick={() => handleListItemClick(3)}
+        >
+          <ListItemText primary="Spam" />
+        </ListItemButton>
+      </StyledList>
+    </Box>
       </div>
-    </ThemeProvider>
+
+
   );
 }
