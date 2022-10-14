@@ -2,6 +2,8 @@ import './Menu.scss';
 import Button from '@mui/material/Button';
 import faceImage from '../../assets/images/PaintBrush.png'
 import IconButton from '@mui/material/IconButton';
+import { useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 
 export default function Menu() {
@@ -31,6 +33,12 @@ function Profile() {
   )
 }
 function MenuExpandedTop() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const gotoMenu = () => {
+    if (location.pathname != '/menu') navigate('/menu');
+    else navigate('/');
+  };
   return (
     <div className='header'>
       <div className='logo'>
@@ -41,14 +49,15 @@ function MenuExpandedTop() {
           width={70}
         />
       </div>
-      <IconButton color="secondary">
-      <div className='menu-button'>
-        <div className='line1'> </div>
-        <div className='line2'> </div>
-        <div className='line3'> </div>
-      </div>
+      <IconButton color="secondary" onClick={gotoMenu}>
+        <NavLink to="/menu">
+          <div className='menu-button'>
+            <div className='line1'> </div>
+            <div className='line2'> </div>
+            <div className='line3'> </div>
+          </div>
+        </NavLink>
       </IconButton>
-      
     </div>
   )
 }
