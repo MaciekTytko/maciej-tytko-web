@@ -2,5 +2,14 @@
 @import '../../SASS/colors';
 
 .aboutMe{
-  display: flex;
+  flex: 11; 
+  
+  height: 100%;
+  width: 100%;
+
+  background-color: #FEFEFE;
+}
+.siteMapList{
+  padding: 2rem;
+  overflow-y: auto;
 }

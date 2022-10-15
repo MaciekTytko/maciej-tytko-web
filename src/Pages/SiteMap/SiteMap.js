@@ -21,12 +21,36 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 export default function SiteMap() {
-  const [aboutMeOpen, setAboutMeOpen] = useState(true);
-  const [puzzleOpen, setPuzzleOpen] = useState(false);
 
-  const textColor = {
+  return (
+    <div className='siteMap'>
+      <SiteMapList />
+      <DownloadCV />
+
+    </div>
+  );
+}
+
+function DownloadCV() {
+  return (
+    <div className='IconCV'>
+      <Button variant="text" sx={{ color: '#ae2b24', fontSize: 16 }}>
+        Pobierz CV
+        <PictureAsPdfIcon sx={{ fontSize: 44, paddingLeft: '4px' }} />
+      </Button>
+    </div>
+  )
+}
+
+function SiteMapList() {
+  const [aboutMeOpen, setAboutMeOpen] = useState(false);
+  const [puzzleOpen, setPuzzleOpen] = useState(false);
+  const navigator = useNavigate();
+
+  const themeColor = {
     palette: {
       text: {
         primary: '#1181b2',
@@ -38,21 +62,19 @@ export default function SiteMap() {
     },
   }
   const menuTheme = createTheme({
-    ...textColor,
+    ...themeColor,
     typography: {
       fontSize: 26,
       fontWeightRegular: 550,
     },
   });
   const subMenuTheme = createTheme({
-    ...textColor,
+    ...themeColor,
     typography: {
       fontSize: 22,
       fontWeightRegular: 550,
     },
   });
-
-
 
   const sxAttributes = (theme) => ({
     borderRadius: 12,
@@ -70,8 +92,10 @@ export default function SiteMap() {
   const StyledListItemButton = styled(ListItemButton)(({ theme }) => sxAttributes(theme));
   const SubStyledListItemButton = styled(ListItemButton)(({ theme }) => ({ ...sxAttributes(theme), paddingLeft: 42, }));
 
+
+
   return (
-    <div className='siteMap'>
+    <div className='siteMapList'>
       <ThemeProvider theme={menuTheme}>
         <Box minWidth={240} >
           <List
@@ -92,7 +116,7 @@ export default function SiteMap() {
           //   </ListSubheader>
           // }
           >
-            <StyledListItemButton onClick={() => setAboutMeOpen(!aboutMeOpen)}>
+            <StyledListItemButton key="aboutMe" onClick={() => setAboutMeOpen(!aboutMeOpen)}>
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>
@@ -102,25 +126,28 @@ export default function SiteMap() {
             <Collapse in={aboutMeOpen} timeout="auto" unmountOnExit>
               <ThemeProvider theme={subMenuTheme}>
                 <List component="div" disablePadding>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton
+                    key="MeetUp"
+                    onClick={() => { navigator('/aboutme') }}
+                  >
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
                     <ListItemText primary="Poznajmy się" />
                   </SubStyledListItemButton>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="contact">
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
                     <ListItemText primary="Kontakt" />
                   </SubStyledListItemButton>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="Geography">
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
                     <ListItemText primary="Geografia" />
                   </SubStyledListItemButton>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="cv">
                     <ListItemIcon>
                       <PictureAsPdfIcon />
                     </ListItemIcon>
@@ -130,7 +157,7 @@ export default function SiteMap() {
               </ThemeProvider>
             </Collapse>
 
-            <StyledListItemButton onClick={() => setPuzzleOpen(!puzzleOpen)}>
+            <StyledListItemButton key="puzzle" onClick={() => setPuzzleOpen(!puzzleOpen)}>
               <ListItemIcon>
                 <SettingsSuggestIcon />
               </ListItemIcon>
@@ -140,25 +167,25 @@ export default function SiteMap() {
             <Collapse in={puzzleOpen} timeout="auto" unmountOnExit>
               <ThemeProvider theme={subMenuTheme}>
                 <List component="div" disablePadding>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="Hotels">
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
                     <ListItemText primary="Fake hotel booking" />
                   </SubStyledListItemButton>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="Insta">
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
                     <ListItemText primary="Better instagram" />
                   </SubStyledListItemButton>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="Poem">
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
                     <ListItemText primary="Make Poem" />
                   </SubStyledListItemButton>
-                  <SubStyledListItemButton>
+                  <SubStyledListItemButton key="moreWorks">
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
@@ -168,39 +195,43 @@ export default function SiteMap() {
               </ThemeProvider>
             </Collapse>
 
-            <StyledListItemButton>
+            <StyledListItemButton
+              key="LinkedIn"
+              href="https://www.linkedin.com/in/maciej-tytko-35a46bb7/recent-activity/shares"
+              target="_blank" rel="noopener">
               <ListItemIcon>
                 <LinkedInIcon />
               </ListItemIcon>
               <ListItemText primary="Publikacje nt. technologii" />
             </StyledListItemButton>
 
-            <StyledListItemButton>
+            <StyledListItemButton
+              key="YouTube"
+              href="https://youtube.com/playlist?list=PLpY4HpxhyVtNFWrkVfTXmWZvL69ecZQVz"
+              target="_blank" rel="noopener">
               <ListItemIcon>
                 <YouTubeIcon />
               </ListItemIcon>
               <ListItemText primary="Asix SCADA - kurs online " />
             </StyledListItemButton>
 
-            <StyledListItemButton>
+            <StyledListItemButton
+              key="Facebook"
+              href="https://www.facebook.com/people/Gliwickie-spotkania-RPG/100063789603055"
+              target="_blank" rel="noopener"
+            >
               <ListItemIcon>
                 <FacebookIcon />
               </ListItemIcon>
-              <ListItemText primary="Gliwickie Spotkania RPG" />
+              <ListItemText
+                primary="Gliwickie Spotkania RPG"
+              />
             </StyledListItemButton>
 
 
           </List>
         </Box>
       </ThemeProvider>
-      <div className='IconCV'>
-        <Button variant="text" sx={{ color: '#ae2b24', fontSize: 16 }}>
-          Pobierz CV
-          <PictureAsPdfIcon sx={{ fontSize: 44, paddingLeft: '4px' }} />
-        </Button>
-      </div>
     </div>
-
-
-  );
+  )
 }

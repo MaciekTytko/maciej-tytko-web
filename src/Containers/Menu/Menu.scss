@@ -2,96 +2,105 @@
 @import '../../SASS/colors';
 
 .menuExpanded {
-  flex: 4;
-  display: flex;
   height: 100%;
+  display: flex;
+  flex: 4;
 
   scroll-snap-align: start;
   scroll-snap-stop: normal;
 
-  .menuMainPage {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+  transition: flex 0.2s linear;
+}
+.menuExpanded {
+  height: 100%;
+  display: flex;
+  flex: 4;
 
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 
-    color: $ColorBasicLight;
+  transition: flex 0.2s linear;
+}
 
-    background-color: $ColorBasicDark;
-    padding: 2rem;
-  }
+.menuMainPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
 
-  .title {
-    font-size: 4rem;
-  }
+  color: $ColorBasicLight;
+  background-color: $ColorBasicDark;
+  padding: 2rem;
+}
 
-  .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: none;
+.title {
+  font-size: 4rem;
+}
 
-  }
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: none;
 
-  .active .menu-button {
-    rotate: -90deg;
-    transition: rotate 1s;
+}
 
-    .line1 {
-      width: 40px;
-      transition: width 1s, margin-left 1s;
-    }
+.active .menu-button {
+  rotate: -90deg;
+  transition: rotate 1s;
 
-    .line2 {
-      margin-left: 20px;
-      width: 15px;
-      transition: width 1s, margin-left 1s;
-    }
-
-    .line3 {
-      margin-left: 0px;
-      width: 40px;
-      transition: width 1s, margin-left 1s;
-    }
-  }
-
-  .menu-button {
+  .line1 {
     width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    background-color: transparent;
-    border-color: transparent;
-    
-    transition: rotate 1s;
-
-    @mixin line() {
-      margin-top: 6px;
-      height: 6px;
-      background-color: white;
-      transition: width 1s, margin-left 1s;
-    }
-
-    .line1 {
-      @include line();
-      width: 20px;
-    }
-
-    .line2 {
-      @include line();
-      width: 40px;
-    }
-
-    .line3 {
-      @include line();
-      margin-left: 20px;
-      width: 20px;
-    }
+    transition: width 1s, margin-left 1s;
   }
 
+  .line2 {
+    margin-left: 20px;
+    width: 15px;
+    transition: width 1s, margin-left 1s;
+  }
+
+  .line3 {
+    margin-left: 0px;
+    width: 40px;
+    transition: width 1s, margin-left 1s;
+  }
+}
+
+.menu-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  background-color: transparent;
+  border-color: transparent;
+
+  transition: rotate 1s;
+
+  @mixin line() {
+    margin-top: 6px;
+    height: 6px;
+    background-color: white;
+    transition: width 1s, margin-left 1s;
+  }
+
+  .line1 {
+    @include line();
+    width: 20px;
+  }
+
+  .line2 {
+    @include line();
+    width: 40px;
+  }
+
+  .line3 {
+    @include line();
+    margin-left: 20px;
+    width: 20px;
+  }
 
 
 

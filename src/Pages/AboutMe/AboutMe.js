@@ -3,7 +3,7 @@ import './AboutMe.scss'
 
 export default function aboutMe(){
   return(
-    <div className='AboutMe'>
+    <div className='aboutMe'>
       <Profile/>
       <Contact/>
       <Blog/>
@@ -32,7 +32,7 @@ function Profile(){
 function Blog(){
   return(
     <div>
-      
+      Blog
     </div>
   )
 }
@@ -40,7 +40,7 @@ function Blog(){
 function Contact(){
   return(
     <div>
-      
+      Kontakt
     </div>
   )
 }
@@ -48,7 +48,7 @@ function Contact(){
 function Maps(){
   return(
     <div>
-      
+      Mapa
     </div>
   )
 }
