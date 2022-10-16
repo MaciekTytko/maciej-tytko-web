@@ -3,35 +3,36 @@
 
 .menuExpanded {
   height: 100%;
-  display: flex;
-  flex: 4;
+  width: 34%;
 
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  // scroll-snap-align: start;
+  // scroll-snap-stop: normal;
 
   transition: flex 0.2s linear;
 }
-.menuExpanded {
-  height: 100%;
-  display: flex;
-  flex: 4;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
-
-  transition: flex 0.2s linear;
+.menuExpanded-exit{
+  transform: translateX(0%);
+  position:fixed;
+}
+.menuExpanded-exit-active{
+  transform: translateX(-110%);
+  position:fixed;
+  transition: all 1s;
 }
 
 .menuMainPage {
+  height: 100%;
   width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow: hidden;
 
   color: $ColorBasicLight;
   background-color: $ColorBasicDark;
-  padding: 2rem;
 }
 
 .title {
@@ -39,11 +40,55 @@
 }
 
 .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: none;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  padding: 0.5rem 0.5rem;
+  box-sizing: border-box;
+  border-radius: 30px;
+  height: 90px;
+  width: 180px;
 
+  display: flex;
+  justify-content: flex-end;
+  // align-items: center;
+  background: $HeaderBackGroundColor;
+}
+.header-enter{
+  height: 90px;
+  width: 180px;
+  flex-direction: row;
+}
+.header-enter-active{ //ACTIVE
+  height: 180px;
+  width: 90px;
+  transition: width 1s, 1s height 1s;
+}
+.header-enter-done{
+  height: 180px;
+  width: 90px;
+  flex-direction: column;
+}
+.header-exit{
+  height: 180px;
+  width: 90px;
+  flex-direction: column;
+}
+.header-exit-active{ //ACTIVE
+  height: 90px;
+  width: 180px;
+  transition: height 1s, 1s width 1s;
+}
+.header-exit-done{
+  height: 90px;
+  width: 180px;
+  flex-direction: row;
+}
+
+.image{
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .active .menu-button {
@@ -107,3 +152,26 @@
 
 
 }
+
+
+
+//.header-enter{
+//   rotate: 0deg;
+// }
+// .header-enter-active{
+//   rotate: 90deg;
+//   transform-origin: 45px 45px;
+//   transition: rotate 1s;
+// }
+// .header-enter-done{
+//   transform-origin: 45px 45px;
+//   rotate: 90deg;
+// }
+// .header-exit{
+//   rotate: 90deg;
+// }
+// .header-exit-active{
+//   rotate: 0deg;
+//   transform-origin: 45px 45px;
+//   transition: rotate 1s;
+// }

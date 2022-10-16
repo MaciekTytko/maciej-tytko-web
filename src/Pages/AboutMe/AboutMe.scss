@@ -2,14 +2,21 @@
 @import '../../SASS/colors';
 
 .aboutMe{
-  flex: 11; 
-  
   height: 100%;
   width: 100%;
 
+  padding: 2rem;
+  padding-left: 100px;
+  box-sizing: border-box;
+
+  display: flex;
+flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
   background-color: #FEFEFE;
 }
-.siteMapList{
-  padding: 2rem;
-  overflow-y: auto;
+
+.profile{
+  text-align: center;
 }
