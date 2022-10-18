@@ -6,6 +6,13 @@ import './AboutMe.scss'
 export default function aboutMe() {
   return (
     <div className='aboutMe'>
+      <Typography
+        variant="h1"
+        gutterBottom
+        align="center"
+      >
+        Maciej Tytko
+      </Typography>
       <Profile />
       <Contact />
       <Blog />
@@ -17,14 +24,8 @@ export default function aboutMe() {
 function Profile() {
   return (
     <div className='profile'>
-      <Box  sx={{ width: '100%', maxWidth: 1000 }}>
-        <Typography
-          variant="h1"
-          gutterBottom
-          align="center"
-        >
-          Maciej Tytko
-        </Typography>
+      <Box sx={{ width: '100%', maxWidth: 1000 }}>
+
         <Typography
           variant="h2"
           align="Left"
@@ -41,8 +42,11 @@ function Profile() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
+              Skończone studia na politechnice
+
+            </Typography>
+            <Typography>
+              Newsy technologiczne na LinkedIn
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -52,7 +56,7 @@ function Profile() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography variant="h5">Designer</Typography>
+            <Typography variant="h5">Frontend designer</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -67,7 +71,7 @@ function Profile() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography variant="h5">Prezes Ligi Znakkomitych Mistrzów Gry</Typography>
+            <Typography variant="h5">Team Leader</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -82,14 +86,20 @@ function Profile() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography variant="h5">Dobry pracownik</Typography>
+            <Typography variant="h5">Prezes Ligi Znakomitych Mistrzów Gry</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Ściągnij CV
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
             </Typography>
           </AccordionDetails>
         </Accordion>
+
+        <Typography align='left'>
+          Ściągnij CV
+        </Typography>
+
       </Box>
     </div>
   )
@@ -97,16 +107,28 @@ function Profile() {
 
 function Blog() {
   return (
-    <div>
-      Blog
-    </div>
+    <Box sx={{ width: '100%', maxWidth: 1000 }}>
+      <Typography
+        variant="h2"
+        align="Left"
+      >
+        Blog
+      </Typography>
+    </Box>
   )
 }
 
 function Contact() {
   return (
     <div>
-      Kontakt
+      <Box sx={{ width: '100%', maxWidth: 1000 }}>
+      <Typography
+        variant="h2"
+        align="Left"
+      >
+        Kontakt
+      </Typography>
+    </Box>
     </div>
   )
 }
@@ -114,7 +136,14 @@ function Contact() {
 function Maps() {
   return (
     <div>
-      Mapa
+      <Box sx={{ width: '100%', maxWidth: 1000 }}>
+      <Typography
+        variant="h2"
+        align="Left"
+      >
+        Gdzie mnie znaleźć
+      </Typography>
+    </Box>
     </div>
   )
 }
