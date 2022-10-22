@@ -115,7 +115,7 @@ function Blog() {
         Blog
       </Typography>
     </Box>
-  )
+  ) 
 }
 
 function Contact() {
