@@ -109,8 +109,8 @@ function Blog() {
   return (
     <Box sx={{ width: '100%', maxWidth: 1000 }}>
       <Typography
-        variant="h2"
-        align="Left"
+            variant="h2"
+          align="Left"
       >
         Blog
       </Typography>
