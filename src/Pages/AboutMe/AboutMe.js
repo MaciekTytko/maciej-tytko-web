@@ -38,13 +38,30 @@ function Profile() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography variant="h5">Inżynier</Typography>
+            <Typography variant="h5">Kariera</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Skończone studia na politechnice
-
+              Laureat olimpiady matematycznej
+              Inżynierka - programowanie sterowników PLC i falowników
+              Magisterka - Badanie algorytmów aktywnego tłumienia hałasów
+              Stażysta - MES
+              pracownik - dział SCADA
+              pracownik - dział marketingu i konsultacji
+              pracownik - Siemens
+              pracownik - Peritus MES
             </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography variant="h5">Inżynier</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
             <Typography>
               Newsy technologiczne na LinkedIn
             </Typography>
@@ -56,12 +73,16 @@ function Profile() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography variant="h5">Frontend designer</Typography>
+            <Typography variant="h5">Programista na froncie</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
+              C# - skrypty + stacja testowania pomp
+              C++ + VCL - harmonogram koksowni
+              JS + React - ta strona
+              SQL + MS Reporting services - raporty środowiskowe
+              Dodatkowo - codingame {/* dodać certyfikaty i ikonki */}
+              II miejsce na mistrzostwach Polski w LabView - kategoria pytania do publiczności
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -75,9 +96,12 @@ function Profile() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </Typography>
+             Prezes stowarzyszenia Liga ZMG
+             Szkolenia managerskie
+              wyszkolenie 5 studentów - peritus Poznań
+              Harmonogram koksowni - 3 developerów
+              Modernizacja w Rybniku
+             </Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -86,20 +110,41 @@ function Profile() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography variant="h5">Prezes Ligi Znakomitych Mistrzów Gry</Typography>
+            <Typography variant="h5">Edukator</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
-            </Typography>
+              Warsztaty RPG
+              Szkolenia z Asixa - YouTube
+              Tłumaczę gry planszowe
+                </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography variant="h5">Sprzedawca i konsultant</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Sprzedaż - Portal
+              Logstor
+                </Typography>
           </AccordionDetails>
         </Accordion>
 
         <Typography align='left'>
           Ściągnij CV
         </Typography>
-
+        <Typography align='left'>
+          Kariera
+        </Typography>
+        <Typography align='left'>
+          Gallup + strength finder
+        </Typography>
       </Box>
     </div>
   )
@@ -109,26 +154,26 @@ function Blog() {
   return (
     <Box sx={{ width: '100%', maxWidth: 1000 }}>
       <Typography
-            variant="h2"
-          align="Left"
+        variant="h2"
+        align="Left"
       >
         Blog
       </Typography>
     </Box>
-  ) 
+  )
 }
 
 function Contact() {
   return (
     <div>
       <Box sx={{ width: '100%', maxWidth: 1000 }}>
-      <Typography
-        variant="h2"
-        align="Left"
-      >
-        Kontakt
-      </Typography>
-    </Box>
+        <Typography
+          variant="h2"
+          align="Left"
+        >
+          Kontakt
+        </Typography>
+      </Box>
     </div>
   )
 }
@@ -137,13 +182,13 @@ function Maps() {
   return (
     <div>
       <Box sx={{ width: '100%', maxWidth: 1000 }}>
-      <Typography
-        variant="h2"
-        align="Left"
-      >
-        Gdzie mnie znaleźć
-      </Typography>
-    </Box>
+        <Typography
+          variant="h2"
+          align="Left"
+        >
+          Gdzie mnie znaleźć
+        </Typography>
+      </Box>
     </div>
   )
 }
