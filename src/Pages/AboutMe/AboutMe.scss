@@ -1,8 +1,8 @@
 @import '../../SASS/basicComponents';
 @import '../../SASS/colors';
 
-.aboutMe{
-  height: 100%;
+.aboutMe {
+
   width: 100%;
 
   padding: 2rem;
@@ -10,13 +10,13 @@
   box-sizing: border-box;
 
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   // justify-content: center;
   align-items: center;
 
-  background-color: #FEFEFE;
+  background-color: #c1c1c1;
 }
 
-.profile{
+.profile {
   text-align: center;
 }
