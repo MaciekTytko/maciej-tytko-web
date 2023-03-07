@@ -1,5 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Career from './Career';
 
 export default function Profile() {
 
@@ -22,7 +23,9 @@ export default function Profile() {
             <Typography variant="h5">Kariera</Typography>
           </AccordionSummary>
           <AccordionDetails>
+            <Career/>
             <Typography>
+
               Laureat olimpiady matematycznej
               Inżynierka - programowanie sterowników PLC i falowników
               Magisterka - Badanie algorytmów aktywnego tłumienia hałasów
