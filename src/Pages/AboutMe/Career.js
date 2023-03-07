@@ -1,5 +1,6 @@
+import { Chip } from '@mui/material'
 import './Career.scss'
-
+ 
 export default function Career() {
   return (
     <Timeline>
@@ -9,6 +10,14 @@ export default function Career() {
         title="Laureat olimpiady matematycznej" 
         desc="Początek zamiłowania do złożonych algorytmów." 
         hashtag={['Algorytmy', 'Nauka']} 
+        />
+      </TimelineElement>
+
+      <TimelineElement year={2013}>
+        <TimelineElementContent 
+        title="Stażysta Koltech" 
+        desc="PLC, CAD, HMI." 
+        hashtag={['CAD', 'PLC', 'HMI', 'WinCC']} 
         />
       </TimelineElement>
 
@@ -32,9 +41,49 @@ export default function Career() {
         hashtag={['Algorytmy', 'Matlab']} 
         />
         <TimelineElementContent 
-        title="Projektant SCADA" 
+        title="Asystent projektanta SCADA" 
         desc="." 
         hashtag={['SCADA', 'Asix']} 
+        />
+      </TimelineElement>
+
+      <TimelineElement year={2018}>
+        <TimelineElementContent 
+        title="Projektant SCADA" 
+        desc="Badanie algorytmów aktywnego tłumienia hałasów." 
+        hashtag={['Algorytmy', 'Matlab']} 
+        />
+      </TimelineElement>
+      
+      <TimelineElement year={2020}>
+        <TimelineElementContent 
+        title="Specjalista ds. Marketingu" 
+        desc="Badanie algorytmów aktywnego tłumienia hałasów." 
+        hashtag={['Algorytmy', 'Matlab']} 
+        />
+      </TimelineElement>
+      
+      <TimelineElement year={2021}>
+        <TimelineElementContent 
+        title="Siemens" 
+        desc="Badanie algorytmów aktywnego tłumienia hałasów." 
+        hashtag={['Algorytmy', 'Matlab']} 
+        />
+      </TimelineElement>
+
+      <TimelineElement year={2022}>
+        <TimelineElementContent 
+        title="Peritus" 
+        desc="Badanie algorytmów aktywnego tłumienia hałasów." 
+        hashtag={['Algorytmy', 'Matlab']} 
+        />
+      </TimelineElement>
+      
+      <TimelineElement year={2023}>
+        <TimelineElementContent 
+        title="Web developer"
+        desc="Badanie algorytmów aktywnego tłumienia hałasów." 
+        hashtag={['React', 'Matlab']} 
         />
       </TimelineElement>
     </Timeline>
@@ -71,9 +120,9 @@ function TimelineElementContent(props) {
       <p className="description">
         {props.desc}
       </p>
-      <p className="description">
+      <p>
         {props.hashtag.map(x => (
-          <div>{x}</div>
+          <Chip variant="outlined"size="small" label={'#'+x}/>
         ))
         }
       </p>
