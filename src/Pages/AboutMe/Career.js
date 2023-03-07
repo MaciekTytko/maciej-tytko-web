@@ -1,4 +1,4 @@
-import { Chip } from '@mui/material'
+import { Chip, Divider } from '@mui/material'
 import './Career.scss'
 
 export default function Career() {
@@ -19,7 +19,7 @@ export default function Career() {
           title="Stażysta Koltech"
           hashtag={['CAD', 'PLC', 'HMI', 'WinCC']}
         >
-          Staż w najbardziej innowacyjnej firmie w Raciborzu.<br />
+          Staż w najbardziej innowacyjnej firmie w Raciborzu.<br /><br />
           Zacząłem od oprogramowania PLC (Siemens LOGO, sterujący sygnałami świetlnymi), poprzez panele HMI, programowanie stanowiska odczytującego grubość szyny w LabView, rysowanie 3D obiektu kamery a kończąc na napisaniu w Javie programu do odczytu logów produkcyjnych (następnie umieszczanie w odpowiednich tabelach, filtrowanie i sortowanie)."
 
         </TimelineElementContent>
@@ -28,14 +28,33 @@ export default function Career() {
       <TimelineElement year={2014}>
         <TimelineElementContent
           title="Inżynier"
-          desc="Praca dotycząca programowania PLC i sterowania falownikiem."
           hashtag={['PLC', 'STEP7', 'Falownik']}
-        />
+        >
+          Praca inżynierska dotyczyła sterowania falownikiem poprzez PLC Siemensa.<br /><br />
+          Moim zadaniem było:
+          <ul className='taskList'>
+            <li>Zaprogramowanie PLC S7-300 w celu sterowania falownikiem,</li>
+            <li>Skonfigurowanie falownika Danfoss,</li>
+            <li>Uruchomienie silnika asynchronicznego prądu przemiennego.</li>
+          </ul>
+        </TimelineElementContent>
+
+        <Divider variant="middle" sx={{ mb: '10px' }} />
+
         <TimelineElementContent
           title="Stażysta działu MES"
-          desc="Manualne testowanie aplikacji MES."
           hashtag={['MES', 'SimaticIT', 'Testing', 'QA']}
-        />
+        >
+          Manualne testowanie aplikacji MES dla fabryki farb.<br /><br />
+          Moim zadaniem było:
+          <ul className='taskList'>
+            <li>Tworzenie scenariuszy testowych,</li>
+            <li>Sprawdzenie działania interfejsu użytkownika,</li>
+            <li>Sprawdzenie flow programu,</li>
+            <li>Sprawdzenie zapisów w bazie danych,</li>
+            <li>Złożenie raportów z testów dla klienta.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
 
       <TimelineElement year={2015}>
@@ -124,12 +143,12 @@ function TimelineElementContent(props) {
       <div className="description">
         {props.children}
       </div>
-      <p>
+      <div className="hashtags">
         {props.hashtag.map(x => (
           <Chip variant="outlined" size="small" label={'#' + x} />
         ))
         }
-      </p>
+      </div>
     </>
   )
 }
