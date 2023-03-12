@@ -1,6 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Career from './Career';
+import Programmer from './Programmer';
 
 export default function Profile() {
 
@@ -14,29 +15,17 @@ export default function Profile() {
         >
           O mnie
         </Typography>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography variant="h5">Kariera</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Career/>
-            <Typography>
 
-              Laureat olimpiady matematycznej
-              Inżynierka - programowanie sterowników PLC i falowników
-              Magisterka - Badanie algorytmów aktywnego tłumienia hałasów
-              Stażysta - MES
-              pracownik - dział SCADA
-              pracownik - dział marketingu i konsultacji
-              pracownik - Siemens
-              pracownik - Peritus MES
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+        <Box sx={{ backgroundColor: 'white', pb:'1rem' }}>
+          <Typography variant="h3">Kariera</Typography>
+          <Career />
+        </Box>
+
+        <Box sx={{ backgroundColor: '#eee', mt: '2rem' }}>
+          <Typography variant="h3">Programista na froncie</Typography>
+          <Programmer />
+        </Box>
+
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -51,25 +40,8 @@ export default function Profile() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography variant="h5">Programista na froncie</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              C# - skrypty + stacja testowania pomp
-              C++ + VCL - harmonogram koksowni
-              JS + React - ta strona
-              SQL + MS Reporting services - raporty środowiskowe
-              Dodatkowo - codingame {/* dodać certyfikaty i ikonki */}
-              II miejsce na mistrzostwach Polski w LabView - kategoria pytania do publiczności
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+
+
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
