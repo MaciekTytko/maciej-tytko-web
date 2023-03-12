@@ -42,8 +42,8 @@ export default function Career() {
         <Divider variant="middle" sx={{ mb: '10px' }} />
 
         <TimelineElementContent
-          title="Stażysta działu MES"
-          hashtag={['MES', 'SimaticIT', 'Testing', 'QA']}
+          title="tester oprogramowania MES"
+          hashtag={['MES', 'SimaticIT', 'Testing', 'QA', 'servicedesk']}
         >
           Manualne testowanie aplikacji MES dla fabryki farb.<br /><br />
           Moim zadaniem było:
@@ -52,7 +52,8 @@ export default function Career() {
             <li>Sprawdzenie działania interfejsu użytkownika,</li>
             <li>Sprawdzenie flow programu,</li>
             <li>Sprawdzenie zapisów w bazie danych,</li>
-            <li>Złożenie raportów z testów dla klienta.</li>
+            <li>Złożenie raportów z testów dla klienta,</li>
+            <li>Administrowanie systemem servicedesk.</li>
           </ul>
         </TimelineElementContent>
       </TimelineElement>
@@ -60,54 +61,118 @@ export default function Career() {
       <TimelineElement year={2015}>
         <TimelineElementContent
           title="Magister"
-          desc="Badanie algorytmów aktywnego tłumienia hałasów."
+          desc=""
           hashtag={['Algorytmy', 'Matlab']}
-        />
+        >
+          Badanie algorytmów aktywnego tłumienia hałasów.<br /><br />
+          Moim zadaniem było:
+          <ul className='taskList'>
+            <li>Ustawienie stanowiska badawczego,</li>
+            <li>Zaprogramowanie procesora PPC MPC 8420,</li>
+            <li>Sprawdzenie 5 wersji algorytmów LMS.</li>
+          </ul>
+        </TimelineElementContent>
+
+        <Divider variant="middle" sx={{ mb: '10px' }} />
+
         <TimelineElementContent
           title="Asystent projektanta SCADA"
-          desc="."
-          hashtag={['SCADA', 'Asix']}
-        />
+          hashtag={['SCADA', 'Asix', 'InTouch', 'WinCC']}
+        >
+          Programowanie systemów SCADA, głównie w przemyśle ciężkim (elektrownie, koksownie).<br /><br />
+          Moim zadaniem było:
+          <ul className='taskList'>
+            <li>Programowanie interfejsu użytkownika,</li>
+            <li>Połączenie z urzadzeniami za pomocą protokołów przemysłowych,</li>
+            <li>Tworzenie grafik,</li>
+            <li>Serwis systemów legacy,</li>
+            <li>Uruchomienie systemu na terenie fabryki.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
 
       <TimelineElement year={2018}>
         <TimelineElementContent
           title="Projektant SCADA"
-          desc="Badanie algorytmów aktywnego tłumienia hałasów."
-          hashtag={['Algorytmy', 'Matlab']}
-        />
+          hashtag={['SCADA', 'Raporty', 'IIoT', 'Receptury', 'Batch', 'Algorytmy']}
+        >
+          Projektant systemów SCADA wraz z doborem odpowiedniej technologii, software oraz hardware.<br /><br />
+          Lista zadań zwiększyła się o:
+          <ul className='taskList'>
+            <li>Projektowanie nowych rozwiązań,</li>
+            <li>Tworzenie raportów produkcyjnych,</li>
+            <li>Komunikacja z urządzeniami IIoT,</li>
+            <li>Wdrażanie systemów recepturowania,</li>
+            <li>Pisanie algorytmów autonomicznie sterujących pracą urządzeń.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
 
       <TimelineElement year={2020}>
         <TimelineElementContent
-          title="Specjalista ds. Marketingu"
-          desc="Badanie algorytmów aktywnego tłumienia hałasów."
-          hashtag={['Algorytmy', 'Matlab']}
-        />
+          title="Konsultant systemów SCADA"
+          hashtag={['SCADA', 'Szkolenia', 'Hardware', 'Architektura', 'Kontakt z klientem']}
+        >
+          Pomoc klientom w doborze rozwiązań dla systemów produkcyjnych, przeprowadzanie szkoleń z systemu SCADA firmy Askom oraz wsparcie współpracowników w programowaniu systemów SCADA.<br /><br />
+          Lista zadań zwiększyła się o:
+          <ul className='taskList'>
+            <li>Prowadzenie szkoleń dla klientów oraz wewnętrznych,</li>
+            <li>Konsultacje systemów SCADA,</li>
+            <li>Pomoc w doborze sprzętu oraz rozwiazań programowych,</li>
+            <li>Projektowanie architektury systemu produkcyjnego w fabryce.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
 
       <TimelineElement year={2021}>
         <TimelineElementContent
-          title="Siemens"
-          desc="Badanie algorytmów aktywnego tłumienia hałasów."
-          hashtag={['Algorytmy', 'Matlab']}
-        />
+          title="Starszy inżynier serwisu"
+          company="Siemens"
+          hashtag={['SCADA', 'EnergyManagement', 'winCC', 'automotive']}
+        >
+          Półroczny kontrakt z liderem branży automatyki na wdrożenie systemu zarządzania energią w przedsiębiorstwie automotive.<br /><br />
+          Moje obowiazki:
+          <ul className='taskList'>
+            <li>Wdrożenie oprogramowania Energy Manager Pro,</li>
+            <li>Szkolenie współpacowników z systemów SCADA,</li>
+            <li>Wyszukiwanie narzędzi umożliwiających predykcję zdarzeń.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
 
       <TimelineElement year={2022}>
         <TimelineElementContent
-          title="Peritus"
-          desc="Badanie algorytmów aktywnego tłumienia hałasów."
-          hashtag={['Algorytmy', 'Matlab']}
-        />
+          title="Team leader"
+          company="Peritus ACT"
+          hashtag={['MES', 'JavaScript', 'Regex', 'Teamwork', 'Kontakt z klientem']}
+        >
+          Wdrożeniowiec oprogramowania MES. Lider zespołu, który wyszkolił 6 praktykantów na sprawnie działający zespół programistów. Gdy zespół się usamodzielnił, kierowałem zespołem DURR India.<br /><br />
+          Moje obowiazki:
+          <ul className='taskList'>
+            <li>Wdrożenie oprogramowania MES: DURR DXQ,</li>
+            <li>Kierowanie zespołem praktykantów,</li>
+            <li>Kierowanie zespołem DURR India,</li>
+            <li>Pisanie skryptów JavaScript i skomplikowanych Regex'ów,</li>
+            <li>Rozwiązywanie sporów technicznych z klientem.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
 
       <TimelineElement year={2023}>
         <TimelineElementContent
-          title="Web developer"
-          desc="Badanie algorytmów aktywnego tłumienia hałasów."
-          hashtag={['React', 'Matlab']}
-        />
+          title="Frontend developer"
+          company="Liga ZMG"
+          hashtag={['React', 'JavaScript', 'Hobby']}
+        >
+          Nauka technologii webowych wraz z rozwijaniem stowarzyszenia.<br /><br />
+          Obecnie zajmuję się:
+          <ul className='taskList'>
+            <li>Zgłębianiem wiedzy o technologiach webowych - kursy,</li>
+            <li>Budowanie strony Stowarzyszenia,</li>
+            <li>Zarządzanie stowarzyszeniem,</li>
+            <li>Zarządzanie aktami prawnymi stowarzyszenia.</li>
+          </ul>
+        </TimelineElementContent>
       </TimelineElement>
     </Timeline>
   )
