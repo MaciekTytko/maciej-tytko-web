@@ -1,4 +1,5 @@
-import { Chip, Divider } from '@mui/material'
+import { Divider } from '@mui/material'
+import Hashtag from '../../Components/Hashtags/Hashtag'
 import './Career.scss'
 
 export default function Career() {
@@ -16,7 +17,8 @@ export default function Career() {
 
       <TimelineElement year={2013}>
         <TimelineElementContent
-          title="Stażysta Koltech"
+          title="Stażysta działu automatyki"
+          company="Koltech"
           hashtag={['CAD', 'PLC', 'HMI', 'WinCC']}
         >
           Staż w najbardziej innowacyjnej firmie w Raciborzu.<br /><br />
@@ -28,6 +30,7 @@ export default function Career() {
       <TimelineElement year={2014}>
         <TimelineElementContent
           title="Inżynier"
+          company="Politechnika Śląska"
           hashtag={['PLC', 'STEP7', 'Falownik']}
         >
           Praca inżynierska dotyczyła sterowania falownikiem poprzez PLC Siemensa.<br /><br />
@@ -43,6 +46,7 @@ export default function Career() {
 
         <TimelineElementContent
           title="tester oprogramowania MES"
+          company="Askom"
           hashtag={['MES', 'SimaticIT', 'Testing', 'QA', 'servicedesk']}
         >
           Manualne testowanie aplikacji MES dla fabryki farb.<br /><br />
@@ -61,7 +65,7 @@ export default function Career() {
       <TimelineElement year={2015}>
         <TimelineElementContent
           title="Magister"
-          desc=""
+          company="Politechnika Śląska"
           hashtag={['Algorytmy', 'Matlab']}
         >
           Badanie algorytmów aktywnego tłumienia hałasów.<br /><br />
@@ -77,6 +81,7 @@ export default function Career() {
 
         <TimelineElementContent
           title="Asystent projektanta SCADA"
+          company="Askom"
           hashtag={['SCADA', 'Asix', 'InTouch', 'WinCC']}
         >
           Programowanie systemów SCADA, głównie w przemyśle ciężkim (elektrownie, koksownie).<br /><br />
@@ -94,6 +99,7 @@ export default function Career() {
       <TimelineElement year={2018}>
         <TimelineElementContent
           title="Projektant SCADA"
+          company="Askom"
           hashtag={['SCADA', 'Raporty', 'IIoT', 'Receptury', 'Batch', 'Algorytmy']}
         >
           Projektant systemów SCADA wraz z doborem odpowiedniej technologii, software oraz hardware.<br /><br />
@@ -111,6 +117,7 @@ export default function Career() {
       <TimelineElement year={2020}>
         <TimelineElementContent
           title="Konsultant systemów SCADA"
+          company="Askom"
           hashtag={['SCADA', 'Szkolenia', 'Hardware', 'Architektura', 'Kontakt z klientem']}
         >
           Pomoc klientom w doborze rozwiązań dla systemów produkcyjnych, przeprowadzanie szkoleń z systemu SCADA firmy Askom oraz wsparcie współpracowników w programowaniu systemów SCADA.<br /><br />
@@ -150,8 +157,7 @@ export default function Career() {
           Moje obowiazki:
           <ul className='taskList'>
             <li>Wdrożenie oprogramowania MES: DURR DXQ,</li>
-            <li>Kierowanie zespołem praktykantów,</li>
-            <li>Kierowanie zespołem DURR India,</li>
+            <li>Kierowanie zespołem,</li>
             <li>Pisanie skryptów JavaScript i skomplikowanych Regex'ów,</li>
             <li>Rozwiązywanie sporów technicznych z klientem.</li>
           </ul>
@@ -205,14 +211,14 @@ function TimelineElementContent(props) {
   return (
     <>
       <h3 className="title">{props.title}</h3>
+      <h5 className="company">{props.company}</h5>
       <div className="description">
         {props.children}
       </div>
       <div className="hashtags">
         {props.hashtag.map(x => (
-          <Chip variant="outlined" size="small" label={'#' + x} />
-        ))
-        }
+          <Hashtag tag={x} />
+        ))}
       </div>
     </>
   )
