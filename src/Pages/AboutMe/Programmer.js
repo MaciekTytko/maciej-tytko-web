@@ -35,6 +35,16 @@ export default function Programmer() {
         </Typography>
       </ProjectCard>
 
+      <ProjectCard title="Skrypty JS"
+        hashtag={['JS', 'JavaScript']}
+        image={logo_js}
+        alt="javascript"
+      >
+        <Typography variant="body2" component="div" textAlign="left">
+          JavaScript wykorzystywałem w pisaniu skryptów przetwarzających dane dla systemu MES.<br />
+        </Typography>
+      </ProjectCard>
+
       <ProjectCard title="Skrypty SCADA"
         hashtag={['C#', 'Algorytmy', 'LINQ']}
         image={logo_cs}
@@ -43,16 +53,6 @@ export default function Programmer() {
         <Typography variant="body2" component="div" textAlign="left">
           C# służył mi jako język do pisania skryptów wizualizacji danych w oprogramowaniu Asix.evo.
           Największym wyzwaniem były skrypty wyznaczające estymacje pracy pomp wysokociśnieniowych na podstawie kilku punktów pomiarowych oraz zasad mechaniki płynów.
-        </Typography>
-      </ProjectCard>
-
-      <ProjectCard title="Skrypty JS"
-        hashtag={['JS', 'JavaScript']}
-        image={logo_js}
-        alt="javascript"
-      >
-        <Typography variant="body2" component="div" textAlign="left">
-          JavaScript wykorzystywałem w pisaniu skryptów przetwarzających dane dla systemu MES.<br />
         </Typography>
       </ProjectCard>
 
